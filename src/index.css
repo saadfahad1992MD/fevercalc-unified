@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --background: #f0f9ff;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Medication card styles */
+.medication-card {
+  @apply bg-white rounded-xl shadow-sm border border-gray-100 p-4 transition-all duration-200;
+}
+
+.medication-card:hover {
+  @apply shadow-md border-primary-200;
+}
+
+.medication-card.selected {
+  @apply border-primary-500 ring-2 ring-primary-200;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-600 shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary-600 border border-primary-200 px-6 py-3 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-secondary:hover {
+  @apply bg-primary-50 border-primary-300;
+}
